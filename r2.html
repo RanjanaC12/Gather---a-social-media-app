@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+
+    <title>
+        Registration Form
+    </title>
+    <style>
+       fieldset
+       { 
+        text-align:left;
+        align-self: center;
+        width:fit-content;
+        border-radius:5%;
+        border-style: double;
+        border-width: 3mm;
+        border-color: rgb(0, 0, 0);
+       }
+       input
+       {
+        float:right;
+        
+       }
+       
+       select
+       {
+        float:right;
+       }
+       body
+       {
+        background-color: rgb(25, 168, 211);
+        font-weight:200;
+        font-size: medium;
+        font-style: normal;
+        font-family:'Lucida Sans Unicode';
+        align-self: center;
+       }
+    </style>
+    
+
+</head>
+<body>
+    <h3>{{error}}</h3>
+    <h3>{{info}}</h3>
+    <fieldset>
+        <legend>Student Registration</legend>
+    <form method="POST" >
+        
+        {% csrf_token %}
+        Username : <input required size="50" type="text" id="username" name="username" />
+        <br/><br/>
+        Email : <input required  size="50" type="email" name="email" id="email"/>
+        <br/><br/>
+        Password : <input required size="50" type="password" id="password" name="password" />
+        <br/><br/>
+        Confirm password : <input required size="50" type="password" id="password2" name="password2"/>
+        <br/><br/>
+        College : 
+        <br/><select name="college" id="college">
+            <option value="Christ University Central Campus" > CHRIST - Deemed to be University - Central Campus </option>
+            <option value="Maharanis Arts, Commerce and Management College for Women, Bangalore - 560 001.">Maharanis Arts, Commerce and Management College for Women, Bangalore - 560 001.</option>
+            <option value="Govt. Arts College, Dr. B R Ambedkar Veedhi, Bangalore - 560 001.">Govt. Arts College, Dr. B R Ambedkar Veedhi, Bangalore - 560 001.</option>
+            <option value="Govt. R.C.College of Commerce & Management, Bangalore - 560 001.">Govt. R.C.College of Commerce & Management, Bangalore - 560 001.</option>
+            <option value="Smt.V.H.D.Central Institute of Home Science College for Women, Bangalore - 560 001.">Smt.V.H.D.Central Institute of Home Science College for Women, Bangalore - 560 001.</option>
+            <option value="Nrupathunga University">Nrupathunga University</option>
+            <option value="Maharanis Science College for Women, Bangalore - 560 001.">Maharanis Science College for Women, Bangalore - 560 001.</option>
+            <option value="Dr.S.Gopalraju Govt. First Grade College, Anekal - 562106.">Dr.S.Gopalraju Govt. First Grade College, Anekal - 562106.</option>
+            <option value="Govt. First Grade College, Vijayanagar, Bangalore - 560 104">Govt. First Grade College, Vijayanagar, Bangalore - 560 104</option>
+            <option value="Govt. First Grade College, K.R.Puram, Bangalore - 560 036.">Govt. First Grade College, K.R.Puram, Bangalore - 560 036.</option>
+            <option value="Lalbahadur Sastry Govt. Arts, Science and Commerce College, R.T.Nagar, Bangalore - 560 032.">Lalbahadur Sastry Govt. Arts, Science and Commerce College, R.T.Nagar, Bangalore - 560 032.</option>
+            
+        </select>
+        <br/><br/>
+        Course:
+        <select name="course" id="course">
+            <option>B.Sc Computer Science</option>
+            <option>B.Sc Microbiology</option>
+            <option>B.Sc Botany</option>
+            <option>B.Sc </option>
+        </select>
+        <br/><br/>
+        <br/>
+        Date of birth :<input required type="date" id="date" name="date"/>
+        <br/><br/>
+        Gender : <br/>
+        Male <input required type="radio" value="Male" name="gender" id="male"/><br/>
+        Female<input required type="radio" value="Female" name="gender" id="female"/><br/>
+        Others <input required type="radio" value="Others" name="gender" id="others"/><br/>
+        <br/><br/>
+        <input type="submit" id="submit" name="submit" value="Register">
+        <br/>
+        <input type="reset" id="reset" name="reset" value="Reset">
+    </form>
+    </fieldset>
+</body>
+</html>
